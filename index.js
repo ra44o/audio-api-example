@@ -8,32 +8,32 @@ function a(arr, place) {
 }
 window.addEventListener('load',
 	a(['start btn', 'stop btn'], '.start-stop'),
-	a(['do btn', 're btn', 'mi btn', 'fa btn', 'so btn', 'la btn', 'si btn', 'doo btn'], '.notes')
+	a(['one btn', 'two btn', 'three btn', 'four btn', 'five btn', 'six btn', 'seven btn', 'eight btn'], '.notes')
 );
 const start = document.querySelector('.start');
 const stop = document.querySelector('.stop');
-const doBtn = document.querySelector('.do');
-const reBtn = document.querySelector('.re');
-const miBtn = document.querySelector('.mi');
-const faBtn = document.querySelector('.fa');
-const soBtn = document.querySelector('.so');
-const laBtn = document.querySelector('.la');
-const siBtn = document.querySelector('.si');
-const dooBtn = document.querySelector('.doo');
+const oneBtn = document.querySelector('.one');
+const twoBtn = document.querySelector('.two');
+const threeBtn = document.querySelector('.three');
+const fourBtn = document.querySelector('.four');
+const fiveBtn = document.querySelector('.five');
+const sixBtn = document.querySelector('.six');
+const sevenBtn = document.querySelector('.seven');
+const eightBtn = document.querySelector('.eight');
 
 let action;
 let aud;
 let ga;
 
 stop.setAttribute('disabled', '');
-doBtn.setAttribute('disabled', '');
-reBtn.setAttribute('disabled', '');
-miBtn.setAttribute('disabled', '');
-faBtn.setAttribute('disabled', '');
-soBtn.setAttribute('disabled', '');
-laBtn.setAttribute('disabled', '');
-siBtn.setAttribute('disabled', '');
-dooBtn.setAttribute('disabled', '');
+oneBtn.setAttribute('disabled', '');
+twoBtn.setAttribute('disabled', '');
+threeBtn.setAttribute('disabled', '');
+fourBtn.setAttribute('disabled', '');
+fiveBtn.setAttribute('disabled', '');
+sixBtn.setAttribute('disabled', '');
+sevenBtn.setAttribute('disabled', '');
+eightBtn.setAttribute('disabled', '');
 
 start.addEventListener('click', () => {
 	let audio = new AudioContext();
@@ -41,104 +41,106 @@ start.addEventListener('click', () => {
 	let gainNode = audio.createGain();
 	oscillator.connect(gainNode).connect(audio.destination);
 	oscillator.start(audio.currentTime);
+	oscillator.type = 'sine';
+	oscillator.frequency.value = 261.625565300598634;
 	gainNode.gain.setValueAtTime(0, audio.currentTime);
 	action = oscillator;
 	aud = audio;
 	ga = gainNode;
 	start.setAttribute('disabled', '');
 	stop.removeAttribute('disabled', '');
-	doBtn.removeAttribute('disabled', '');
-	reBtn.removeAttribute('disabled', '');
-	miBtn.removeAttribute('disabled', '');
-	faBtn.removeAttribute('disabled', '');
-	soBtn.removeAttribute('disabled', '');
-	laBtn.removeAttribute('disabled', '');
-	siBtn.removeAttribute('disabled', '');
-	dooBtn.removeAttribute('disabled', '');
+	oneBtn.removeAttribute('disabled', '');
+	twoBtn.removeAttribute('disabled', '');
+	threeBtn.removeAttribute('disabled', '');
+	fourBtn.removeAttribute('disabled', '');
+	fiveBtn.removeAttribute('disabled', '');
+	sixBtn.removeAttribute('disabled', '');
+	sevenBtn.removeAttribute('disabled', '');
+	eightBtn.removeAttribute('disabled', '');
 });
 
 stop.addEventListener('click', () => {
 	action.stop(aud.currentTime);
 	start.removeAttribute('disabled', '');
 	stop.setAttribute('disabled', '');
-	doBtn.setAttribute('disabled', '');
-	reBtn.setAttribute('disabled', '');
-	miBtn.setAttribute('disabled', '');
-	faBtn.setAttribute('disabled', '');
-	soBtn.setAttribute('disabled', '');
-	laBtn.setAttribute('disabled', '');
-	siBtn.setAttribute('disabled', '');
-	dooBtn.setAttribute('disabled', '');
+	oneBtn.setAttribute('disabled', '');
+	twoBtn.setAttribute('disabled', '');
+	threeBtn.setAttribute('disabled', '');
+	fourBtn.setAttribute('disabled', '');
+	fiveBtn.setAttribute('disabled', '');
+	sixBtn.setAttribute('disabled', '');
+	sevenBtn.setAttribute('disabled', '');
+	eightBtn.setAttribute('disabled', '');
 });
 
-doBtn.addEventListener('mouseenter', () => {
+oneBtn.addEventListener('mouseenter', () => {
 	action.detune.setValueAtTime(200, aud.currentTime);
 	ga.gain.setValueAtTime(1, aud.currentTime);
 });
 
-doBtn.addEventListener('mouseleave', () => {
+oneBtn.addEventListener('mouseleave', () => {
 	ga.gain.setValueAtTime(0, aud.currentTime);
 });
 
-reBtn.addEventListener('mouseenter', () => {
+twoBtn.addEventListener('mouseenter', () => {
 	action.detune.setValueAtTime(300, aud.currentTime);
 	ga.gain.setValueAtTime(1, aud.currentTime);
 });
 
-reBtn.addEventListener('mouseleave', () => {
+twoBtn.addEventListener('mouseleave', () => {
 	ga.gain.setValueAtTime(0, aud.currentTime);
 });
 
-miBtn.addEventListener('mouseenter', () => {
+threeBtn.addEventListener('mouseenter', () => {
 	action.detune.setValueAtTime(400, aud.currentTime);
 	ga.gain.setValueAtTime(1, aud.currentTime);
 });
 
-miBtn.addEventListener('mouseleave', () => {
+threeBtn.addEventListener('mouseleave', () => {
 	ga.gain.setValueAtTime(0, aud.currentTime);
 });
 
-faBtn.addEventListener('mouseenter', () => {
+fourBtn.addEventListener('mouseenter', () => {
 	action.detune.setValueAtTime(500, aud.currentTime);
 	ga.gain.setValueAtTime(1, aud.currentTime);
 });
 
-faBtn.addEventListener('mouseleave', () => {
+fourBtn.addEventListener('mouseleave', () => {
 	ga.gain.setValueAtTime(0, aud.currentTime);
 });
 
-soBtn.addEventListener('mouseenter', () => {
+fiveBtn.addEventListener('mouseenter', () => {
 	action.detune.setValueAtTime(600, aud.currentTime);
 	ga.gain.setValueAtTime(1, aud.currentTime);
 });
 
-soBtn.addEventListener('mouseleave', () => {
+fiveBtn.addEventListener('mouseleave', () => {
 	ga.gain.setValueAtTime(0, aud.currentTime);
 });
 
-laBtn.addEventListener('mouseenter', () => {
+sixBtn.addEventListener('mouseenter', () => {
 	action.detune.setValueAtTime(700, aud.currentTime);
 	ga.gain.setValueAtTime(1, aud.currentTime);
 });
 
-laBtn.addEventListener('mouseleave', () => {
+sixBtn.addEventListener('mouseleave', () => {
 	ga.gain.setValueAtTime(0, aud.currentTime);
 });
 
-siBtn.addEventListener('mouseenter', () => {
+sevenBtn.addEventListener('mouseenter', () => {
 	action.detune.setValueAtTime(800, aud.currentTime);
 	ga.gain.setValueAtTime(1, aud.currentTime);
 });
 
-siBtn.addEventListener('mouseleave', () => {
+sevenBtn.addEventListener('mouseleave', () => {
 	ga.gain.setValueAtTime(0, aud.currentTime);
 });
 
-dooBtn.addEventListener('mouseenter', () => {
+eightBtn.addEventListener('mouseenter', () => {
 	action.detune.setValueAtTime(900, aud.currentTime);
 	ga.gain.setValueAtTime(1, aud.currentTime);
 });
 
-dooBtn.addEventListener('mouseleave', () => {
+eightBtn.addEventListener('mouseleave', () => {
 	ga.gain.setValueAtTime(0, aud.currentTime);
 });
