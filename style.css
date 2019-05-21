@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;text-transform: uppercase;
+}
+
+.start {
+	background-color: #74df5c;
+}
+
+.stop {
+	background-color: #fc5555;
+}
+
+.content-wrapper {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.start-stop {
+	margin-bottom: 50px;
+}
+
+.btn {
+	font-size: 30px;
+    margin-right: 20px;
+    border: 2px solid black;
+    padding: 6px;
+	border-radius: 6px;
+	width: 120px;
+}
